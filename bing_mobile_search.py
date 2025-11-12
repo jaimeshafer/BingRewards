@@ -17,6 +17,7 @@ chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 chrome_options.add_argument("--remote-debugging-port=9222")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--headless")  # Only if you want to hide the window
 
 print("📱 Using mobile emulation with saved cookies...\n")
 
@@ -25,8 +26,9 @@ for i in range(nsearch):
     word2 = r.word()
     word3 = r.word()
     query = f"{word1} {word2} {word3}"
-    search_url = f"https://www.bing.com/search?q={word1}+{word2}+{word3}"
-    delay = random.randint(450, 500)
+    search_url = f"https://www.bing.com/search?q="+word1+"+"+word2+"+"+word3+"&qs=n&form=QBRE&sp=-1&lq=0&pq="+word1+"+"+word2+"+"+word3+"&sc=10-14&sk=&cvid=F958C197B98945529D35B01540AC9449&ghsh=0&ghacc=0&ghpl="
+
+    delay = random.randint(400, 450)
 
     driver = None
     try:
