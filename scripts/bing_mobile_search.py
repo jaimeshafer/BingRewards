@@ -10,6 +10,7 @@ import pickle
 r = RandomWord()
 nsearch = 24
 
+
 # Mobile emulation setup
 mobile_emulation = {"deviceName": "iPhone X"}
 chrome_options = Options()
