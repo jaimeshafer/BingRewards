@@ -56,7 +56,19 @@ def desktop_asset(context: AssetExecutionContext) -> None:
 
         driver = None
         try:
+<<<<<<< HEAD
             driver = webdriver.Chrome(options=chrome_options)
+=======
+            selenium_remote_url = os.getenv("SELENIUM_REMOTE_URL")
+            if selenium_remote_url:
+                driver = webdriver.Remote(
+                    command_executor=selenium_remote_url,
+                    options=chrome_options,
+                )
+            else:
+                driver = webdriver.Chrome(options=chrome_options)
+                
+>>>>>>> 353d131 (adding dagster)
             context.log.info("[%s/%s] Searching: %s", i + 1, nsearch, query)
             driver.get(search_url)
 

@@ -2,6 +2,7 @@
 bing_cookies.pkl
 .vscode
 .tmp_dagster*
+dagster_home/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
