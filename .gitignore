@@ -1,12 +1,16 @@
-*.pkl
+data/*
+!data/.gitkeep
 bing_cookies.pkl
-.vscode
-.tmp_dagster*
+*.pkl
+.env
+.env.*
 dagster_home/
-data/chrome-automation-profile/
-
+.tmp_dagster*/
+chrome-automation-profile/
 .DS_Store
 **/.DS_Store
+.vscode
+data/chrome-automation-profile/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
