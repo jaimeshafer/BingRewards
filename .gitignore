@@ -1,5 +1,4 @@
 data/*
-!data/.gitkeep
 bing_cookies.pkl
 *.pkl
 .env
