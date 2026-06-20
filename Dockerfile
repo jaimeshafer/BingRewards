@@ -26,10 +26,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 COPY --from=builder /app/.venv /app/.venv
 COPY . .
 
-USER root
-RUN mkdir -p /app/data /app/dagster_home
-USER nonroot
-
 EXPOSE 30303
 
-CMD ["dagster", "dev", "-m", "dags.definitions", "-h", "0.0.0.0", "-p", "30303"]
+ENTRYPOINT ["/app/.venv/bin/python"]
+CMD ["-m", "dagster", "dev", "-m", "dags.definitions", "-h", "0.0.0.0", "-p", "30303"]

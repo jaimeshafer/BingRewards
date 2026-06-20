@@ -1,3 +1,4 @@
+import os
 import pickle
 import time
 from pathlib import Path
@@ -21,7 +22,7 @@ from .bing_desktop_asset import desktop_asset
 def mobile_asset(context: AssetExecutionContext) -> None:
     r = RandomWord()
     nsearch = 24
-    cookie_path = Path("bing_cookies.pkl")
+    cookie_path = Path(os.getenv("BING_MOBILE_COOKIES_PATH", "data/bing_mobile_cookies.pkl"))
 
     mobile_emulation = {"deviceName": "iPhone X"}
 

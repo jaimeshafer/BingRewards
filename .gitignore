@@ -3,6 +3,7 @@ bing_cookies.pkl
 .vscode
 .tmp_dagster*
 dagster_home/
+data/chrome-automation-profile/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
