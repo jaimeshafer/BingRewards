@@ -1,0 +1,30 @@
+services:
+  dagster:
+    build: .
+    container_name: bing-points-dagster
+    ports:
+      - "30303:30303"
+    volumes:
+      - ./data:/app/data
+      - ./dagster_home:/app/dagster_home
+    environment:
+      DAGSTER_HOME: /app/dagster_home
+      SELENIUM_REMOTE_URL: http://selenium:4444/wd/hub
+      BING_DESKTOP_COOKIES_PATH: /app/data/bing_desktop_cookies.pkl
+      BING_MOBILE_COOKIES_PATH: /app/data/bing_mobile_cookies.pkl
+    depends_on:
+      - selenium
+    restart: unless-stopped
+
+  selenium:
+    image: selenium/standalone-chromium:latest
+    container_name: bing-points-selenium
+    shm_size: "2gb"
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    volumes:
+      - ./data:/app/data
+    environment:
+      SE_NODE_SESSION_TIMEOUT: 900
+    restart: unless-stopped
