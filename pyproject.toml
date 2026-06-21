@@ -14,9 +14,9 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-selenium = "^4.31.0"
-wonderwords = "^2.2.0"
-dagster-webserver = "^1.12.3"
+selenium = "^4.45.0"
+wonderwords = "^3.0.1"
+dagster-webserver = "^1.13.10"
 
 [build-system]
 requires = ["poetry-core"]
