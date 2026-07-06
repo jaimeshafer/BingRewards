@@ -1,5 +1,5 @@
 FROM chainguard/python:latest-dev AS builder
-
+USER root
 WORKDIR /app
 
 ENV POETRY_NO_INTERACTION=1
