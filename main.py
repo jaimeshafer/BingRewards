@@ -15,4 +15,4 @@ def dag_local():
 
 def save_cookies():
     save_desktop_cookie()
-    # save_mobile_cookie()
+    save_mobile_cookie()

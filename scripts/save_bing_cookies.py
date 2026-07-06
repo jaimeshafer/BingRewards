@@ -53,7 +53,15 @@ def save_desktop_cookie():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(options=chrome_options)
+    selenium_remote_url = os.getenv("SELENIUM_REMOTE_URL")
+
+    if selenium_remote_url:
+        driver = webdriver.Remote(
+            command_executor=selenium_remote_url,
+            options=chrome_options,
+        )
+    else:
+        driver = webdriver.Chrome(options=chrome_options)
 
     try:
         driver.get("https://www.bing.com")
