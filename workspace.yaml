@@ -1,0 +1,4 @@
+load_from:
+  - python_module:
+      module_name: dags.definitions
+      location_name: Bing_Rewards
