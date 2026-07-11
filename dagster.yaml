@@ -1,0 +1,19 @@
+telemetry:
+  enabled: false
+
+retention:
+  schedule:
+    purge_after_days: 7
+  sensor:
+    purge_after_days:
+      skipped: 7
+      failure: 14
+      success: 21
+
+run_monitoring:
+  enabled: true
+  start_timeout_seconds: 180
+  cancel_timeout_seconds: 180
+  poll_interval_seconds: 120
+  max_runtime_seconds: 43200
+  free_slots_after_run_end_seconds: 300

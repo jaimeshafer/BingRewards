@@ -94,6 +94,10 @@ def desktop_asset(context: AssetExecutionContext) -> None:
             context.log.info("Landed on: %s", driver.current_url)
             context.log.info("Page title: %s", driver.title)
 
+        except Exception as e:
+            context.log.exception("Search %s failed: %s", i + 1, e)
+            raise
+
         finally:
             if driver:
                 try:
