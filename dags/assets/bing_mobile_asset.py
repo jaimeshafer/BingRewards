@@ -21,6 +21,7 @@ from .bing_desktop_asset import desktop_asset
 )
 def mobile_asset(context: AssetExecutionContext) -> None:
     r = RandomWord()
+    selenium_remote_url = os.getenv("SELENIUM_REMOTE_URL")
     nsearch = 24
     cookie_path = Path(os.getenv("BING_MOBILE_COOKIES_PATH", "data/bing_mobile_cookies.pkl"))
 
@@ -64,7 +65,6 @@ def mobile_asset(context: AssetExecutionContext) -> None:
         driver = None
 
         try:
-            selenium_remote_url = os.getenv("SELENIUM_REMOTE_URL")
             if selenium_remote_url:
                 driver = webdriver.Remote(
                     command_executor=selenium_remote_url,
@@ -76,21 +76,41 @@ def mobile_asset(context: AssetExecutionContext) -> None:
             driver.get("https://www.bing.com")
             time.sleep(2)
 
+            skipped_cookies = 0
+
             for cookie in cookies:
-                cookie.pop("expiry", None)
-                driver.add_cookie(cookie)
+                clean_cookie = dict(cookie)
+                clean_cookie.pop("expiry", None)
+
+                try:
+                    driver.add_cookie(clean_cookie)
+                except Exception:
+                    skipped_cookies += 1
+
+            if skipped_cookies:
+                context.log.info("Skipped %s cookies that Selenium could not restore.", skipped_cookies)
+                                
 
             context.log.info("[%s/%s] Searching: %s", i + 1, nsearch, query)
             driver.get(search_url)
+            time.sleep(10)
 
-            context.log.info("Sleeping for %s seconds.", delay)
-            time.sleep(delay)
+            context.log.info("Landed on: %s", driver.current_url)
+            context.log.info("Page title: %s", driver.title)
 
         except Exception as e:
             context.log.exception("Search %s failed: %s", i + 1, e)
+            raise
 
         finally:
             if driver:
-                driver.quit()
+                try:
+                    driver.quit()
+                except Exception as e:
+                    context.log.warning("Driver quit failed: %s", e)
+
+        if i < nsearch - 1:
+            context.log.info("Sleeping for %s seconds.", delay)
+            time.sleep(delay)
 
     context.log.info("Mobile searches ended.")
