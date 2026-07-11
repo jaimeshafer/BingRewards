@@ -383,14 +383,14 @@ cron = ["capturer (>=2.4)"]
 
 [[package]]
 name = "dagster"
-version = "1.13.12"
+version = "1.13.13"
 description = "Dagster is an orchestration platform for the development, production, and observation of data assets."
 optional = false
 python-versions = "<3.15,>=3.10"
 groups = ["main"]
 files = [
-    {file = "dagster-1.13.12-py3-none-any.whl", hash = "sha256:f271c6dfcf2f30298c110179d215268e71995928491d72ded3a9095c84868a70"},
-    {file = "dagster-1.13.12.tar.gz", hash = "sha256:8397840e221cefc2125b0b2f27e492bd5a26584218e764c7168cd7855c56fb07"},
+    {file = "dagster-1.13.13-py3-none-any.whl", hash = "sha256:4c69d77dd8c395d36006c21ec34d078173888a019d0a2a6026da526d9428d474"},
+    {file = "dagster-1.13.13.tar.gz", hash = "sha256:ff316c71d4de93aa362daee1b3e46bedabffc7f4ab30ebe7ba7d9cd862fb879c"},
 ]
 
 [package.dependencies]
@@ -398,12 +398,12 @@ alembic = ">=1.2.1,<1.6.3 || >1.6.3,<1.7.0 || >1.7.0,<1.11.0 || >1.11.0"
 antlr4-python3-runtime = "<4.14"
 click = ">=5.0,<9.0"
 coloredlogs = ">=6.1,<=14.0"
-dagster-pipes = "1.13.12"
-dagster-shared = "1.13.12"
+dagster-pipes = "1.13.13"
+dagster-shared = "1.13.13"
 docstring-parser = "*"
 filelock = "*"
 grpcio = {version = ">=1.66.2", markers = "python_version >= \"3.13\""}
-grpcio-health-checking = {version = ">=1.66.2", markers = "python_version >= \"3.13\""}
+grpcio-health-checking = {version = ">=1.66.2,<1.82", markers = "python_version >= \"3.13\""}
 jinja2 = "*"
 protobuf = {version = ">=4,<7", markers = "python_version >= \"3.11\""}
 psutil = {version = ">=1.0", markers = "platform_system == \"Windows\""}
@@ -434,18 +434,18 @@ ty = ["boto3-stubs[essential]", "pandas-stubs", "ty (==0.0.44)", "types-backport
 
 [[package]]
 name = "dagster-graphql"
-version = "1.13.12"
+version = "1.13.13"
 description = "The GraphQL API for Dagster."
 optional = false
 python-versions = "<3.15,>=3.10"
 groups = ["main"]
 files = [
-    {file = "dagster_graphql-1.13.12-py3-none-any.whl", hash = "sha256:6cc6efed114bfd4e93e84ec3f6642a103f399e623b46f89fb82a00f53cfb8fca"},
-    {file = "dagster_graphql-1.13.12.tar.gz", hash = "sha256:a2dfcdcb46f1837f23075a7cb004b8fed90e73ff34c74ad53ff2ff3031b4f291"},
+    {file = "dagster_graphql-1.13.13-py3-none-any.whl", hash = "sha256:ae148c20dc9f081ac152a1495712ecbe9023724dd395bd4411dce5fdefa8278e"},
+    {file = "dagster_graphql-1.13.13.tar.gz", hash = "sha256:50061ac108a8616a1779ddd0ef29146f3342ba9f74544f10b04b7848efa47c79"},
 ]
 
 [package.dependencies]
-dagster = "1.13.12"
+dagster = "1.13.13"
 gql = {version = ">=3,<5", extras = ["requests"]}
 graphene = ">=3,<4"
 requests = "*"
@@ -453,14 +453,14 @@ starlette = "*"
 
 [[package]]
 name = "dagster-pipes"
-version = "1.13.12"
+version = "1.13.13"
 description = "Toolkit for Dagster integrations with transform logic outside of Dagster"
 optional = false
 python-versions = "<3.15,>=3.10"
 groups = ["main"]
 files = [
-    {file = "dagster_pipes-1.13.12-py3-none-any.whl", hash = "sha256:606b202a3529a016307b49a6b59f40ac684b982d2f50ae48dee58f7c92ad6566"},
-    {file = "dagster_pipes-1.13.12.tar.gz", hash = "sha256:1999fc28f367783b997be870bd505c9efdc2b57ca13e65a269d9bfa5e590432f"},
+    {file = "dagster_pipes-1.13.13-py3-none-any.whl", hash = "sha256:45faaa5f1a338e2f7f851033fbc6873329ea1f48c4f0e84cbc12f752cde7d803"},
+    {file = "dagster_pipes-1.13.13.tar.gz", hash = "sha256:0b19b53e7da0a3b7ea3dfdf7e050952684453b6154d4a56829d699dc53fabf62"},
 ]
 
 [package.extras]
@@ -468,14 +468,14 @@ stubs = ["google-cloud-storage"]
 
 [[package]]
 name = "dagster-shared"
-version = "1.13.12"
+version = "1.13.13"
 description = "Shared code between dagster and dagster-dg-core."
 optional = false
 python-versions = "<3.15,>=3.10"
 groups = ["main"]
 files = [
-    {file = "dagster_shared-1.13.12-py3-none-any.whl", hash = "sha256:6ee47e24c0e1a72646a7b8b5da2e3f8b13595ca935fa407b00445dca33c079e1"},
-    {file = "dagster_shared-1.13.12.tar.gz", hash = "sha256:d02795838639bd56f3d826bfd9da421cd2b45112c919743dfe46c0c2b077dba4"},
+    {file = "dagster_shared-1.13.13-py3-none-any.whl", hash = "sha256:1aee9bad06ac474e30a15f0546697a862045632ecb7052ee0b401e6e41051cdb"},
+    {file = "dagster_shared-1.13.13.tar.gz", hash = "sha256:6035d306f615abc5c10cf445e72a6362a0843b330f42a8d279c5979191d2a3fe"},
 ]
 
 [package.dependencies]
@@ -488,20 +488,20 @@ typing-extensions = ">=4.11.0,<5"
 
 [[package]]
 name = "dagster-webserver"
-version = "1.13.12"
+version = "1.13.13"
 description = "Web UI for dagster."
 optional = false
 python-versions = "<3.15,>=3.10"
 groups = ["main"]
 files = [
-    {file = "dagster_webserver-1.13.12-py3-none-any.whl", hash = "sha256:0e69233c7d9c6238388467747498c9e38e0f5645335d029bfae14ee27580ca36"},
-    {file = "dagster_webserver-1.13.12.tar.gz", hash = "sha256:236ae698027c07a1dc5f631c4d828e3eec3f83df55525a749f959eff3bae4f1b"},
+    {file = "dagster_webserver-1.13.13-py3-none-any.whl", hash = "sha256:c430cf2dd5a59670fec8b8f6e7e4b345d1ab79265f0715c2d4383d7916b35bca"},
+    {file = "dagster_webserver-1.13.13.tar.gz", hash = "sha256:e7daf4e8f6f1627c2c262568a6c02888d13b24d0eca9ac429bece7156e86bbf1"},
 ]
 
 [package.dependencies]
 click = ">=7.0,<9.0"
-dagster = "1.13.12"
-dagster-graphql = "1.13.12"
+dagster = "1.13.13"
+dagster-graphql = "1.13.13"
 starlette = "!=0.36.0"
 uvicorn = {version = "*", extras = ["standard"]}
 
@@ -2843,4 +2843,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13,<3.15"
-content-hash = "5c201fcb3fd3ba42c9ba5444b58035f59c2d65d04f0461c49d78f50b415a36fa"
+content-hash = "5a45eb1d3fd0510e4dd11c84e07b233fc6ed15cd2b00cfae41190168370ca9da"
