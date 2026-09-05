@@ -14,7 +14,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-selenium = "^4.47.0"
+selenium = "^4.48.0"
 wonderwords = "^3.0.1"
 dagster-webserver = "^1.13.19"
 
